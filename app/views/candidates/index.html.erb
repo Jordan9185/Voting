@@ -4,20 +4,27 @@
 <table>
 	<thead>
 		<tr>
+			<td>Vote</td>
 			<td>Name</td>
 			<td>Party</td>
 			<td>Politics</td>
 			<td>Votes</td>
+			<td>Action</td>
 		</tr>
 	</thead>
 
 	<tbody>
 		<% @Candidates.each do |candidate| %>
 		<tr>
+			<td><%= link_to "Vote to him" , vote_candidate_path(candidate), method: "post" , data:{ confirm: "Are you sure?"}%></td>
 			<td><%= candidate.name %>(Age:<%= candidate.age %>)</td>
 			<td><%= candidate.party %></td>
 			<td><%= candidate.politics %></td>
-			<td><%= candidate.votes %></td>			
+			<td><%= candidate.votes %></td>
+			<td>
+			<%= link_to "Edit", edit_candidate_path(candidate) %>
+			<%= link_to "Delete", candidate_path(candidate) , method: "delete" , data:{confirm:"Sure?"} %>
+			</td>			
 		</tr>
 		<% end %>
 	</tbody>
