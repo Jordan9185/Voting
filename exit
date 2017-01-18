@@ -1,0 +1,30 @@
+[33mcommit 5f9ff59a7b2b074beb9424cbc9dc1c43f9ee5fec[m
+Merge: ee491ed 36e1726
+Author: Jordan <jordan5011@yahoo.com.tw>
+Date:   Tue Jan 17 10:30:53 2017 +0800
+
+    Merge branch 'master' of github.com:Jordan9185/Voting
+
+[33mcommit ee491edc3a14e70776486ef34ce1fb9a62603bbd[m
+Author: Jordan <jordan5011@yahoo.com.tw>
+Date:   Tue Jan 17 10:29:54 2017 +0800
+
+    add vote & action item to index page
+
+[33mcommit 36e172652791145233247644a1887d6d8decd900[m
+Author: Jordan9185 <jordan5011@yahoo.com.tw>
+Date:   Mon Jan 16 15:25:10 2017 +0800
+
+    Update README.md
+
+[33mcommit f44ca06412a8a99457a36b48fa0eab6ffb0a157a[m
+Author: Jordan <jordan5011@yahoo.com.tw>
+Date:   Mon Jan 16 14:53:47 2017 +0800
+
+    Implement new & create function
+
+[33mcommit fd7a5629b7c6f7519fc1ecce19492bbe7183ec13[m
+Author: Jordan <jordan5011@yahoo.com.tw>
+Date:   Mon Jan 16 14:20:23 2017 +0800
+
+    first create

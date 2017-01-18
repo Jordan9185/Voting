@@ -1,0 +1,20 @@
+<h1>Edit new candidate</h1>
+<%= form_for @Candidate do |f| %>
+	<%=f.label :name, "Name"%>
+	<%=f.text_field :name %> <br>
+
+	<%=f.label :age, "Age"%>
+	<%=f.text_field :age %> <br>
+
+	<%=f.label :party, "Party"%>
+	<%=f.text_field :party %> <br>
+
+	<%=f.label :politics, "Politics"%>
+	<%=f.text_field :politics %> <br>
+
+	<%=f.submit %>
+<% end %>
+
+<br>
+
+<%=link_to 'Candidates list',candidates_path %>
