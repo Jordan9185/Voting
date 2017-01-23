@@ -1,4 +1,6 @@
 class CandidatesController < ApplicationController
+	before_action :find_candidate, only:[:edit,:update,:destroy,:vote]
+
 	def index
 		@Candidates = Candidate.all
 	end
@@ -18,12 +20,9 @@ class CandidatesController < ApplicationController
 	end
 
 	def edit
-		@Candidate = Candidate.find_by(id:params[:id])
 	end
 
 	def update
-		@Candidate = Candidate.find_by(id:params[:id])
-
 		if @Candidate.update_attributes(candidate_params)
 			redirect_to candidates_path,notice:"Update success!"
 		else
@@ -32,19 +31,22 @@ class CandidatesController < ApplicationController
 	end
 
 	def destroy
-		@Candidate = Candidate.find_by(id:params[:id])
 		@Candidate.destroy
 		redirect_to candidates_path,notice:"Candidate already deleted."
 	end
 
 	def vote
-		@Candidate = Candidate.find_by(id:params[:id])
 		@Candidate.increment(:votes)
 		@Candidate.save
 		redirect_to candidates_path,notice:"Thanks for vote!"
 	end
 
+	private
 	def candidate_params
 		params.require(:candidate).permit(:name, :age, :party, :politics)
+	end
+
+	def find_candidate
+		@Candidate = Candidate.find_by(id:params[:id])
 	end
 end
