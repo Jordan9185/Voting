@@ -37,6 +37,13 @@ class CandidatesController < ApplicationController
 		redirect_to candidates_path,notice:"Candidate already deleted."
 	end
 
+	def vote
+		@Candidate = Candidate.find_by(id:params[:id])
+		@Candidate.increment(:votes)
+		@Candidate.save
+		redirect_to candidates_path,notice:"Thanks for vote!"
+	end
+
 	def candidate_params
 		params.require(:candidate).permit(:name, :age, :party, :politics)
 	end
