@@ -1,7 +1,7 @@
 <h1>Candidates List</h1>
 <%= link_to "Add new candidate",new_candidate_path%>
 
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<td>Vote</td>
@@ -16,7 +16,7 @@
 	<tbody>
 		<% @Candidates.each do |candidate| %>
 		<tr>
-			<td><%= link_to "Vote to him" , vote_candidate_path(candidate), method: "post" , data:{ confirm: "Are you sure?"}%></td>
+			<td><%= link_to "Vote" , vote_candidate_path(candidate), method: "post" , data:{ confirm: "Are you sure?"},class:"btn btn-danger btn-xs"%></td>
 			<td><%= candidate.name %>(Age:<%= candidate.age %>)</td>
 			<td><%= candidate.party %></td>
 			<td><%= candidate.politics %></td>
